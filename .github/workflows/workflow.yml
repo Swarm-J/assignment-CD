@@ -1,7 +1,7 @@
 name: flask app deployment
 
 # Run this workflow whenever a git push is being prompted
-on: Push
+on: push
 
 jobs:
   run-tests:
