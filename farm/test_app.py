@@ -2,4 +2,4 @@ from app import index
 
 
 def test_index():
-    assert index() == "Testing Again"
+    assert index() == "Hello, world!"
