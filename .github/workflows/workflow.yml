@@ -27,7 +27,7 @@ jobs:
           KEY: ${{ secrets.SSHKEY }}
           PORT: ${{ secrets.PORT }}
         with:
-          source: "."
+          source: "C:/Users/julia/Documents/assignment_cd"
           target: "/home/"
 
       - name : executing remote ssh commands
