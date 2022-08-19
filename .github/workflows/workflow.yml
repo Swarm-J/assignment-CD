@@ -21,14 +21,14 @@ jobs:
 
       - name: copy contents to VPS via ssh key
         uses: appleboy/scp-action@master
-        env:
+        reposi:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           KEY: ${{ secrets.SSHKEY }}
           PORT: ${{ secrets.PORT }}
         with:
           source: "."
-          target: "/home/farm"
+          target: "/home/"
 
       - name : executing remote ssh commands
         uses: appleboy/ssh-action@master
