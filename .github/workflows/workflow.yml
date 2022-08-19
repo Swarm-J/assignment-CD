@@ -28,7 +28,7 @@ jobs:
           PORT: ${{ secrets.PORT }}
         with:
           source: "C:/Users/julia/Documents/assignment_cd"
-          target: "/home/test"
+          target: "/home/farm"
 
       - name : executing remote ssh commands
         uses: appleboy/ssh-action@master

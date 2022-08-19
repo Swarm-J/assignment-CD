@@ -1,5 +1,5 @@
 echo "Moving to directory"
-cd  /home/test
+cd  /home/farm
 echo "Listing contents"
 ls
 echo "Restarting farm process"
