@@ -19,20 +19,22 @@ jobs:
       - name: Run tests
         run: pytest
 
-      
-
-  deploy:
-    needs: run-tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy App
-        uses: appleboy/ssh-action@v0.1.4
+      - name: copy contents to VPS via ssh key
+        uses: appleboy/scp-action@master
+        env:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          KEY: ${{ secrets.SSHKEY }}
+          PORT: ${{ secrets.PORT }}
         with:
-          host: ${{ secrets.HOST }}
-          key: ${{ secrets.SSHKEY }}
-          username: ${{ secrets.USERNAME }}
-          script: |
-            pip install gunicorn flask
-            cd /home/farm
-            git pull
-            systemctl restart farm
+          source: "."
+          target: "/home/test"
+
+      - name : executing remote ssh commands
+        uses: appleboy/ssh-action@master
+        with:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          KEY: ${{ secrets.SSHKEY }}
+          PORT: ${{ secrets.PORT }}
+          script: sh /home/bash.sh
