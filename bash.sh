@@ -1,7 +1,7 @@
 echo "Moving to directory"
-cd  /home/test
+cd  /home/farm
 echo "Listing contents"
 ls
 echo "Restarting farm process"
-systemctl restart test
+systemctl restart farm
 echo "Successfully restarted process"
