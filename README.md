@@ -1,3 +1,5 @@
+![example workflow](https://github.com/Swarm-J/assignment-CD/actions/workflows/workflow.yml/badge.svg)
+
 # Assignment: CD
 
 #### Essential components
